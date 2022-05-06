@@ -7,7 +7,6 @@ xcode_workspace: WeShop.xcworkspace
 xcode_scheme: WeShop AppStore
 before_install:
 - brew install gimme
-- gimme -V
+- GIMME_GO_VERSION=1.11.x
 install:
-- "bundle install --jobs=3 --retry=3 --path=${BUNDLE_PATH:-vendor/bundle}"
 - export XCPRETTY_FORMATTER="$(bundle show xcpretty-json-formatter)/lib/json_formatter.rb"
