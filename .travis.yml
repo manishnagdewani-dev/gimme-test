@@ -1,0 +1,13 @@
+osx_image: xcode13.2
+language: objective-c
+cache:
+  cocoapods: true
+  bundler: true
+xcode_workspace: WeShop.xcworkspace
+xcode_scheme: WeShop AppStore
+before_install:
+- brew install gimme
+- cp WeShop/iOS/SupportFiles//Debug.xcconfig.example WeShop/iOS/SupportFiles/Debug.xcconfig
+install:
+- "bundle install --jobs=3 --retry=3 --path=${BUNDLE_PATH:-vendor/bundle}"
+- export XCPRETTY_FORMATTER="$(bundle show xcpretty-json-formatter)/lib/json_formatter.rb"
